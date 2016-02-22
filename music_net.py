@@ -86,13 +86,13 @@ def sample(a, temperature=1.0):
 
 def train():
     # train the model, output generated text after each iteration
-    for iteration in range(1, 2):
+    for iteration in range(0, 45):
         print()
         print('-' * 50)
         print('Iteration', iteration)
         model.fit(X, y, batch_size=128, nb_epoch=1)
 
-        if iteration == 30 or iteration == 60:
+        if iteration == 25 or iteration == 45:
             start_index = random.randint(0, len(text) - maxlen - 1)
 
             for diversity in [0.2, 0.5, 1.0, 1.2]:
